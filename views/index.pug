@@ -1,0 +1,17 @@
+doctype html
+html
+    head
+        link(rel='stylesheet' href='index.css')
+    body
+        h1(class='header') Your Tweets
+        div(class='tweets')
+            each tweet in tweets
+                div(class='tweet')
+                    div(class='tweet-top')
+                        img(class='bog-logo' src='bog_logo.svg')
+                        h1(class='tweet-header') Twitter Bot
+                    p=tweet.tweet
+                    - var date = tweet.timestamp.toString().split(' ').splice(0, 6).join(' ')
+                    h1(class='tweet-bottom')=date
+            img(class='bog-wordmark' src='bog_wordmark.svg')
+

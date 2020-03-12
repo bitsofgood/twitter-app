@@ -1,0 +1,85 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin-top: 20px 0 0 0;
+    background-color: rgb(250, 250, 250);
+    margin: 0px;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+.header {
+    margin-top: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 50px;
+    text-align: center;
+}
+
+.tweets {
+    width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+}
+
+.tweet {
+    width: 300px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px 30px 10px 30px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+
+.tweet-top {
+    width: 300px;
+    height: 32.5px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.bog-logo {
+    margin-top: 2.5px;
+    height: 30px;
+    float: left;
+}
+
+.tweet-header {
+    width: 200px;
+    margin-top: 0px;
+    margin-left: 10px;
+    float: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    text-align: left;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.tweet-bottom {
+    width: 300px;
+    height: 12px;
+    text-align: right;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    color: gray;
+}
+
+.bog-wordmark {
+    height: 30px;
+    display: block;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+}
