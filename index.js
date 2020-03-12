@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 
 app.get('/', async  (req, res) => {
     try {
-        const tweets = await db.getTweets()
+        // here
         res.render('index', {
             tweets: tweets,
         })
@@ -31,7 +31,7 @@ app.post('/tweet', async (req, res) => {
     }
 
     try {
-        await db.addTweet(tweet)
+        // here
         res.redirect('/')
     } catch (error) {
         res.status(500)
@@ -42,7 +42,7 @@ app.post('/tweet', async (req, res) => {
 })
 
 async function start() {
-    await db.init()
+    // here
     app.listen(3000)
 }
 
