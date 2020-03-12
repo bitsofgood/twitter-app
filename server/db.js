@@ -36,7 +36,6 @@ module.exports = {
     insertTweet: insertTweet,
     connect: connect,
     close: close,
-    client: client,
 }
 
 /**

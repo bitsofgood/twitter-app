@@ -1,17 +1,25 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-const db = require('./server/db')
+const db = require('./db')
 
 const app = express()
 app.set('view engine', 'pug')
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({extended: true}))
 
-app.get('/', async function (req, res) {
-    const tweets = await db.findTweets()
-    res.render('index', {
-        tweets: tweets,
-    })
+app.get('/', async  (req, res) => {
+    try {
+        const tweets = await db.getTweets()
+        res.render('index', {
+            tweets: tweets,
+        })
+    } catch (error) {
+        console.log(error)
+        res.status(500)
+        res.json({
+            error: error,
+        })
+    }
 })
 
 app.post('/tweet', async (req, res) => {
@@ -22,10 +30,20 @@ app.post('/tweet', async (req, res) => {
         return
     }
 
-    await db.insertTweet(tweet)
-    res.redirect('/')
+    try {
+        await db.addTweet(tweet)
+        res.redirect('/')
+    } catch (error) {
+        res.status(500)
+        res.json({
+            error: error
+        })
+    }
 })
 
-db.connect()
+async function start() {
+    await db.init()
+    app.listen(3000)
+}
 
-app.listen(3000)
+start()
